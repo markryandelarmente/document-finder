@@ -21,7 +21,7 @@ export default async function DashboardLayout({
 
   return (
       
-    <div className="container mx-auto">
+    <div className="container mx-auto px-6 pb-10">
       <header className="py-4 flex justify-between items-center border-b">
         <Image width={80} height={80} src="/logo.jpeg" alt="Logo"></Image>
         <Logout/>

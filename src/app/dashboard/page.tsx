@@ -5,9 +5,9 @@ export default function Page() {
   return (
     <div className="mt-8">
       <div>
-        <Input placeholder="Search document" className="w-1/2 mx-auto h-12 placeholder:text-base" />
+        <Input placeholder="Search document" className="lg:w-1/2 mx-auto h-12 placeholder:text-base" />
       </div>
-      <div className="grid grid-cols-5 mt-10 gap-6">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 mt-10 gap-6">
         {
           Array.from({ length: 15 }).map((_, index) => (
             <Link href={`/dashboard/${index}`} key={index} className="bg-gray-500 p-6 rounded-sm cursor-pointer">
