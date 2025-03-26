@@ -77,3 +77,25 @@ model Authenticator {
 
   @@id([userId, credentialID])
 }
+
+model Cabinet {
+  id        String     @id @default(cuid())
+  name      String
+  documents Document[] // One-to-Many relation
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Document {
+  id        String  @id @default(cuid())
+  name      String
+  mimetype  String
+  size      Int?
+  src       String
+  cabinetId String  // Foreign key
+  cabinet   Cabinet @relation(fields: [cabinetId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
