@@ -79,7 +79,7 @@ export default function Page() {
         </div>
       ) : (
         <div className="py-10 text-center w-full border-dotted border mt-8 flex items-center justify-center h-[50vh]">
-          <p>NO CABINETS FOUND</p>
+          <p>NO CABINETS FOUND!</p>
         </div>
       )}
     </div>
