@@ -22,8 +22,10 @@ export function LoginForm({
   
   const [email, setEmail] = useState("johndoe@example.com")
   const [password, setPassword] = useState("password")
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSignIn = async() => {
+    setIsLoading(true)
     const response = await signIn("credentials", {
       email,
       password,
@@ -34,7 +36,7 @@ export function LoginForm({
     if(!response?.ok) {
       alert("USER NOT FOUND")
     }
-
+    setIsLoading(false)
     redirect("/dashboard")
   }
 
@@ -81,7 +83,7 @@ export function LoginForm({
               </div>
               <div className="flex flex-col gap-3">
                 <Button onClick={() => handleSignIn()} type="button" className="w-full">
-                  Login
+                  {isLoading ? "Logging In..." : "Login"}
                 </Button>
               </div>
             </div>
