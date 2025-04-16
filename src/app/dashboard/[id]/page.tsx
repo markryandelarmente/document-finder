@@ -86,21 +86,25 @@ export default function Page() {
         <h1 className="text-2xl font-bold mb-6 lg:mb-0">{cabinet.name} Documents</h1>
         <Input
           placeholder="Search documents"
-          className="lg:w-1/3 h-12 placeholder:text-base"
+          className="lg:w-1/3 h-12 placeholder:text-base bg-white"
           value={searchKey}
           onChange={handleSearchChange}
         />
       </div>
       <div className="mt-10">
-        <Table>
-          <TableCaption>A list of your documents.</TableCaption>
+        <Table className="bg-white/30">
+          <TableCaption className="text-black">A list of your documents.</TableCaption>
           <TableHeader>
-            <TableRow>
-              <TableHead className="w-[150px]">REFERENCE NUMBER</TableHead>
-              <TableHead>DOCUMENT NAME</TableHead>
-              <TableHead>DATE ADDED</TableHead>
-              <TableHead className="text-right">CABINET NO.</TableHead>
-              <TableHead className="text-right">STATUS</TableHead>
+            <TableRow className="text-center">
+              <TableHead className="w-[150px] ">CHECK NO.</TableHead>
+              <TableHead className="text-center">DV NUMBER</TableHead>
+              <TableHead className="text-center">DOCUMENT NAME</TableHead>
+              <TableHead className="text-center">DEPARTMENT</TableHead>
+              <TableHead className="text-center">PAYEE</TableHead>
+              <TableHead className="text-center">DATE ADDED</TableHead>
+              <TableHead className="text-center">CABINET NO.</TableHead>
+              <TableHead className="text-center">STATUS</TableHead>
+              <TableHead className="text-center">ACTION</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
@@ -112,10 +116,16 @@ export default function Page() {
                 documents.map((document: any) => (
                   <TableRow>
                     <TableCell className="font-medium py-6">{document.id}</TableCell>
+                    <TableCell>2024-001</TableCell>
                     <TableCell>{document.name}</TableCell>
+                    <TableCell>Mayor's Office</TableCell>
+                    <TableCell>Bengie Arcagua</TableCell>
                     <TableCell>{document.createdAt}</TableCell>
-                    <TableCell className="text-right">{cabinet.name}</TableCell>
-                    <TableCell className="text-right"><Badge variant="secondary">Available</Badge></TableCell>
+                    <TableCell>{cabinet.name}</TableCell>
+                    <TableCell><Badge variant="secondary">Available</Badge></TableCell>
+                    <TableCell>
+                      <Button className="bg-green-500"> view document  </Button> <Button >borrow</Button>
+                    </TableCell>
                   </TableRow>
                 ))
             ) : (

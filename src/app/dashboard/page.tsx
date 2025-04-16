@@ -48,11 +48,11 @@ export default function Page() {
   }, [])
 
   return (
-    <div className="mt-8">
+    <div className="mt-5">
       <div>
         <Input
           placeholder="Search cabinets"
-          className="lg:w-1/2 mx-auto h-12 placeholder:text-base"
+          className="lg:w-1/2 mx-auto h-12 placeholder:text-base bg-white"
           value={searchKey}
           onChange={handleSearchChange}
         />
@@ -66,11 +66,11 @@ export default function Page() {
             <Link
               href={`/dashboard/${cabinet.id}`}
               key={cabinet.id}
-              className="bg-gray-500 p-6 rounded-sm cursor-pointer"
+              className="bg-gray-50 p-6 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors"
             >
-              <div className="border-2 border-gray-50 p-4 rounded-sm">
-                <span className="h-6 block mx-8 w-auto rounded-4xl border-2 border-gray-50"></span>
-                <p className="uppercase font-bold mt-3 text-lg text-white text-center">
+              <div className="border-2 border-emerald-700 p-4 rounded-sm bg-white">
+                <span className="h-6 block mx-8 w-auto rounded-4xl border-2 border-orange-700"></span>
+                <p className="uppercase font-bold mt-3 text-lg text-black text-center">
                   {cabinet.name}
                 </p>
               </div>

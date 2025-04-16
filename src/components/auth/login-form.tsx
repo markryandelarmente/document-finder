@@ -61,6 +61,7 @@ export function LoginForm({
                   type="email"
                   placeholder="m@example.com"
                   required
+                  className="shadow-black shadow-md"
                 />
               </div>
               <div className="grid gap-3">
@@ -79,6 +80,7 @@ export function LoginForm({
                   id="password" 
                   type="password" 
                   required 
+                  className="shadow-black shadow-md"
                 />
               </div>
               <div className="flex flex-col gap-3">
